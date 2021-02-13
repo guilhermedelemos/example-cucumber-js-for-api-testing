@@ -1,0 +1,44 @@
+{
+  "name": "example-cucumber-js-for-api-testing",
+  "version": "1.0.0",
+  "description": "Cucmber.js example for API testing",
+  "main": "index.js",
+  "repository": "git@github.com:guilhermedelemos/example-cucumber-js-for-api-testing.git",
+  "author": "Guilherme de Lemos <guilherme.eti@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "cucumber-js",
+    "test:html": "cucumber-js --format html > ./results/test.html",
+    "test:pretty": "cucumber-js --format @cucumber/pretty-formatter",
+    "lint": "yarn run eslint features",
+    "commit": "git cz"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^7.0.0",
+    "chai": "^4.3.0",
+    "dotenv-flow": "^3.2.0",
+    "superagent": "^6.1.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
